@@ -31,7 +31,6 @@ model = dict(
             type='SingleRoIExtractor',
             roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
             out_channels=256,
-            num_classes=1,
             featmap_strides=[4, 8, 16, 32]),
         mask_roi_extractor=dict(
             type='SingleRoIExtractor',
