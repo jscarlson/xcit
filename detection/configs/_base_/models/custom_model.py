@@ -40,6 +40,7 @@ model = dict(
             type='SingleRoIExtractor',
             roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
             out_channels=256,
+            num_classes=1,
             featmap_strides=[16, 16, 16, 16]),
         bbox_head=dict(
             type='Shared2FCBBoxHead',
@@ -59,6 +60,7 @@ model = dict(
             type='SingleRoIExtractor',
             roi_layer=dict(type='RoIAlign', output_size=14, sampling_ratio=0),
             out_channels=256,
+            num_classes=1,
             featmap_strides=[16, 16, 16, 16]),
         mask_head=dict(
             type='FCNMaskHead',
