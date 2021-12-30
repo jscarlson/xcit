@@ -6,7 +6,7 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 """
 
 _base_ = [
-    '../_base_/models/mask_rcnn_xcit_p8.py',
+    '../_base_/models/custom_model.py',
     '../_base_/datasets/custom_detection.py',
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
@@ -14,7 +14,7 @@ _base_ = [
 model = dict(
     backbone=dict(
         type='XCiT',
-        patch_size=8,
+        patch_size=16,
         embed_dim=384,
         depth=12,
         num_heads=8,
