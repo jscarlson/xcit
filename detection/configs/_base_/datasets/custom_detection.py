@@ -2,6 +2,7 @@
 # All rights reserved.
 dataset_type = 'CocoDataset'
 data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/Label-Studio-Labeling/pr-non-title-character-detection/combined-output/'
+classes = ('character',)
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -34,16 +35,19 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
+        classes=classes,
         ann_file=data_root + 'input/train80_fixed.json',
         img_prefix=data_root + 'generated/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
+        classes=classes,
         ann_file=data_root + 'input/test20_fixed.json',
         img_prefix=data_root + 'generated/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
+        classes=classes,
         ann_file=data_root + 'input/test20_fixed.json',
         img_prefix=data_root + 'generated/',
         pipeline=test_pipeline))
