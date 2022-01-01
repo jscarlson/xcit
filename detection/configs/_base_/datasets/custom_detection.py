@@ -1,8 +1,8 @@
 # Copyright (c) 2015-present, Facebook, Inc.
 # All rights reserved.
 dataset_type = 'CocoDataset'
-# data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/Label-Studio-Labeling/pr-non-title-character-detection/combined-output/'
-data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/Label-Studio-Labeling/newspaper-character-labeling/combined-output/'
+data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/Label-Studio-Labeling/pr-non-title-character-detection/combined-output/'
+# data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/Label-Studio-Labeling/newspaper-character-labeling/combined-output/'
 classes = ('character',)
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -37,22 +37,22 @@ data = dict(
     train=dict(
         type=dataset_type,
         classes=classes,
-        # ann_file=data_root + 'input/train80_fixed.json',
-        ann_file=data_root + 'input/train80.json',
+        ann_file=data_root + 'input/train80_fixed.json',
+        # ann_file=data_root + 'input/train80.json',
         img_prefix=data_root + 'generated/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         classes=classes,
-        # ann_file=data_root + 'input/test20_fixed.json',
-        ann_file=data_root + 'input/test20.json',
+        ann_file=data_root + 'input/test20_fixed.json',
+        # ann_file=data_root + 'input/test20.json',
         img_prefix=data_root + 'generated/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        # ann_file=data_root + 'input/test20_fixed.json',
-        ann_file=data_root + 'input/test20.json',
+        ann_file=data_root + 'input/test20_fixed.json',
+        # ann_file=data_root + 'input/test20.json',
         img_prefix=data_root + 'generated/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')
