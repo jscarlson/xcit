@@ -125,8 +125,7 @@ def main():
     cfg = Config.fromfile(args.config)
     if args.cfg_options is not None:
         cfg.merge_from_dict(args.cfg_options)
-        pp = pprint.PrettyPrinter(indent=4)
-        s = pp.pformat(cfg)
+        s = pprint.pformat(cfg)
         print(s)
     # import modules from string list.
     if cfg.get('custom_imports', None):
