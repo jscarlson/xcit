@@ -126,7 +126,8 @@ def main():
     if args.cfg_options is not None:
         cfg.merge_from_dict(args.cfg_options)
         pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(cfg)
+        s = pp.pformat(cfg)
+        print(s)
     # import modules from string list.
     if cfg.get('custom_imports', None):
         from mmcv.utils import import_modules_from_strings
