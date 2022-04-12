@@ -92,10 +92,10 @@ lr_config = dict(step=[27, 33])
 runner = dict(type='EpochBasedRunner', max_epochs=30)
 
 # do not use mmdet version fp16
-fp16 = None
+"""fp16 = None
 optimizer_config = dict(
     type="Fp16OptimizerHook",
     grad_clip=None,
     coalesce=True,
     bucket_size_mb=-1,
-)
+)"""

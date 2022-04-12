@@ -56,3 +56,14 @@ data = dict(
         img_prefix=data_root+'images/'))
 
 evaluation = dict(metric=['bbox', 'segm'], save_best='bbox_mAP', classwise=True)
+
+log_config = dict(
+    interval=10,
+    hooks=[
+        dict(type='TextLoggerHook'),
+        dict(
+            type='WandbLoggerHook',
+            init_kwargs=dict(
+                project='mmdetection',
+                name='xcit-s-eng-pretrain'))
+    ])
