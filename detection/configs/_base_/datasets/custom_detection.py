@@ -55,7 +55,7 @@ data = dict(
         ann_file=data_root+'test10.json',
         img_prefix=data_root+'images/'))
 
-evaluation = dict(metric=['bbox', 'segm'], save_best='bbox_mAP', classwise=True)
+evaluation = dict(metric=['bbox', 'segm'], classwise=True)
 
 log_config = dict(
     interval=10,
