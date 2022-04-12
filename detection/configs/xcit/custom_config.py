@@ -7,7 +7,7 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 
 _base_ = [
     '../_base_/models/custom_model.py',
-    '../_base_/datasets/coco_instance.py',
+    '../_base_/datasets/custom_detection.py',
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
 
