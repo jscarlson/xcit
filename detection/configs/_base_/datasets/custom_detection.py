@@ -1,8 +1,8 @@
 # Copyright (c) 2015-present, Facebook, Inc.
 # All rights reserved.
+_base_ = './coco_instance.py'
 dataset_type = 'CocoDataset'
 data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/synthtxt_simpler_more/'
-classes = ('character',)
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -35,35 +35,17 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        # explicitly add your class names to the field `classes`
-        classes=classes,
-        pipeline=train_pipeline,
-        ann_file=data_root+'train90.json',
-        img_prefix=data_root+'images/'),
+        ann_file=data_root + 'train90.json',
+        img_prefix=data_root + 'images/',
+        pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
-        # explicitly add your class names to the field `classes`
-        classes=classes,
-        pipeline=test_pipeline,
-        ann_file=data_root+'test10.json',
-        img_prefix=data_root+'images/'),
+        ann_file=data_root + 'test10.json',
+        img_prefix=data_root + 'images/',
+        pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        # explicitly add your class names to the field `classes`
-        classes=classes,
-        pipeline=test_pipeline,
-        ann_file=data_root+'test10.json',
-        img_prefix=data_root+'images/'))
-
-evaluation = dict(metric=['bbox', 'segm'], classwise=True)
-
-log_config = dict(
-    interval=10,
-    hooks=[
-        dict(type='TextLoggerHook'),
-        dict(
-            type='WandbLoggerHook',
-            init_kwargs=dict(
-                project='mmdetection',
-                name='xcit-s-eng-pretrain'))
-    ])
+        ann_file=data_root + 'test10.json',
+        img_prefix=data_root + 'images/',
+        pipeline=test_pipeline))
+evaluation = dict(interval=1, metric='bbox')
