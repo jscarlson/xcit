@@ -37,18 +37,21 @@ data = dict(
         type=dataset_type,
         # explicitly add your class names to the field `classes`
         classes=classes,
+        pipeline=train_pipeline,
         ann_file=data_root+'train90.json',
         img_prefix=data_root+'images/'),
     val=dict(
         type=dataset_type,
         # explicitly add your class names to the field `classes`
         classes=classes,
+        pipeline=test_pipeline,
         ann_file=data_root+'test10.json',
         img_prefix=data_root+'images/'),
     test=dict(
         type=dataset_type,
         # explicitly add your class names to the field `classes`
         classes=classes,
+        pipeline=test_pipeline,
         ann_file=data_root+'test10.json',
         img_prefix=data_root+'images/'))
 
