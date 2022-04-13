@@ -23,8 +23,8 @@ from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.models import build_detector, build_backbone
 
-sys.path.append("../backbone")
-from backbone import xcit
+sys.path.insert(0, "../backbone")
+import xcit
 
 
 def parse_args():
