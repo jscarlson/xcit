@@ -109,7 +109,11 @@ def parse_args():
         args.eval_options = args.options
     return args
 
-
+import os.path as osp
+import pickle
+import shutil
+import tempfile
+import time
 from mmcv.image import tensor2imgs
 from mmdet.core import encode_mask_results
 
