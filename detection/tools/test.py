@@ -199,7 +199,7 @@ def main():
     if not distributed:
         model = MMDataParallel(model, device_ids=[0])
         outputs = single_gpu_test(model, data_loader, args.show, args.show_dir,
-                                  args.show_score_thr)
+                                  args.show_score_thr, {"font_size": 2})
     else:
         model = MMDistributedDataParallel(
             model.cuda(),
