@@ -197,9 +197,10 @@ def main():
         model.CLASSES = dataset.CLASSES
 
     if not distributed:
+        kwargs = {"thickness": 1}
         model = MMDataParallel(model, device_ids=[0])
         outputs = single_gpu_test(model, data_loader, args.show, args.show_dir,
-                                  args.show_score_thr, **{"thickness": 1})
+                                  args.show_score_thr, **kwargs)
     else:
         model = MMDistributedDataParallel(
             model.cuda(),
