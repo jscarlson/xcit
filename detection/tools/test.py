@@ -25,7 +25,7 @@ from mmdet.models import build_detector, build_backbone
 
 sys.path.insert(0, "/srv/ocr/github_repos/xcit/detection/backbone")
 print(sys.path)
-from detection.backbone import xcit
+from .detection.backbone import xcit
 
 
 def parse_args():
