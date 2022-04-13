@@ -49,7 +49,7 @@ data = dict(
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'test20.json',
+        ann_file=data_root + 'test30.json',
         img_prefix=data_root + 'lines/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')
