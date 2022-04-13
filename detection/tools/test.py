@@ -24,7 +24,7 @@ from mmdet.datasets import (build_dataloader, build_dataset,
 from mmdet.models import build_detector, build_backbone
 
 sys.path.insert(0, "../backbone")
-import xcit
+from xcit import XCiT
 
 
 def parse_args():
