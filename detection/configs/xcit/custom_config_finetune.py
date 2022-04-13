@@ -100,7 +100,7 @@ log_config = dict(
             type='WandbLoggerHook',
             init_kwargs=dict(
                 project='mmdetection',
-                name='xcit-s-eng-finetune-allnews'))
+                name='xcit-s-eng-finetune-burlington'))
     ])
 
 # do not use mmdet version fp16
