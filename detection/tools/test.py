@@ -23,7 +23,7 @@ from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.models import build_detector, build_backbone
 
-sys.path.append("/srv/ocr/github_repos/xcit/detection/backbone")
+sys.path.insert(0, "/srv/ocr/github_repos/xcit/detection/backbone")
 print(sys.path)
 from backbone import xcit
 
