@@ -12,7 +12,7 @@ _base_ = [
 ]
 
 custom_imports = dict(
-    imports=['.backbones.xcit'],
+    imports=['detection.backbone.xcit'],
     allow_failed_imports=False)
 
 model = dict(
