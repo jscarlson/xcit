@@ -12,35 +12,6 @@ _base_ = [
     '../_base_/default_runtime.py'
 ]
 
-model = dict(
-    backbone=dict(
-        type='XCiT',
-        patch_size=8,
-        embed_dim=384,
-        depth=24,
-        num_heads=8,
-        mlp_ratio=4,
-        qkv_bias=True,
-        eta=1e-5,
-        drop_path_rate=0.1,
-        out_indices=[7, 11, 15, 23],
-    ),
-    neck=dict(in_channels=[384, 384, 384, 384]),
-    roi_head=dict(
-        type='StandardRoIHead',
-        bbox_roi_extractor=dict(
-            type='SingleRoIExtractor',
-            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
-            out_channels=256,
-            featmap_strides=[4, 8, 16, 32]),
-        mask_roi_extractor=dict(
-            type='SingleRoIExtractor',
-            roi_layer=dict(type='RoIAlign', output_size=14, sampling_ratio=0),
-            out_channels=256,
-            featmap_strides=[4, 8, 16, 32])
-    ),
-)
-
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
