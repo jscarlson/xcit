@@ -40,7 +40,6 @@ model = dict(
             featmap_strides=[4, 8, 16, 32])
     ),
 )
-print(model)
 
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)

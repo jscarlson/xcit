@@ -12,6 +12,7 @@ model = dict(
         num_heads=8,
         mlp_ratio=4,
         qkv_bias=True,
+        nun_classes=2,
     ),
     neck=dict(
         type='FPN',
