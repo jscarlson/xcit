@@ -12,6 +12,21 @@ _base_ = [
     '../_base_/default_runtime.py'
 ]
 
+model = dict(
+    backbone=dict(
+        type='XCiT',
+        patch_size=8,
+        embed_dim=384,
+        depth=24,
+        num_heads=8,
+        mlp_ratio=4,
+        qkv_bias=True,
+        eta=1e-5,
+        drop_path_rate=0.1,
+        out_indices=[7, 11, 15, 23],
+    ),
+)
+
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
