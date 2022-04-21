@@ -52,4 +52,4 @@ data = dict(
         ann_file=data_root + 'test10.json',
         img_prefix=data_root + 'images/',
         pipeline=test_pipeline))
-evaluation = dict(interval=1, metric='bbox', classwise=True)
+evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP', classwise=True)
