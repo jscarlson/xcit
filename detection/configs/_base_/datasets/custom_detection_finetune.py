@@ -52,4 +52,4 @@ data = dict(
         ann_file=data_root + 'noisy_test30sofar_highres_expanded.json',
         img_prefix=data_root + 'noisy_lines/',
         pipeline=test_pipeline))
-evaluation = dict(interval=1, metric='bbox')
+evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP',)
