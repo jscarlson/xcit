@@ -408,7 +408,7 @@ class XCiT(nn.Module):
                 nn.init.constant_(m.bias, 0)
                 nn.init.constant_(m.weight, 1.0)
 
-        pretrained = None # 'pretrained/xcit_small_12_cp8_dino.pth' # 'pretrained/xcit_small_12_cp16_dino.pth'
+        # pretrained = pretrained # 'pretrained/xcit_small_12_cp8_dino.pth' # 'pretrained/xcit_small_12_cp16_dino.pth'
         print("Loading pretrained weights from checkpoint", pretrained)
         checkpoint = torch.load(pretrained, map_location='cpu')
 
