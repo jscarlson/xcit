@@ -6,7 +6,7 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 """
 
 _base_ = [
-    '../_base_/models/custom_model_twoclass.py',
+    '../_base_/models/custom_cascade_twoclass.py',
     '../_base_/datasets/custom_detection_twoclass.py',
     '../_base_/schedules/schedule_1x.py', 
     '../_base_/default_runtime.py'
@@ -26,19 +26,6 @@ model = dict(
         out_indices=[7, 11, 15, 23],
     ),
     neck=dict(in_channels=[512, 512, 512, 512]),
-    roi_head=dict(
-        type='StandardRoIHead',
-        bbox_roi_extractor=dict(
-            type='SingleRoIExtractor',
-            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
-            out_channels=256,
-            featmap_strides=[4, 8, 16, 32]),
-        mask_roi_extractor=dict(
-            type='SingleRoIExtractor',
-            roi_layer=dict(type='RoIAlign', output_size=14, sampling_ratio=0),
-            out_channels=256,
-            featmap_strides=[4, 8, 16, 32])
-    ),
 )
 
 img_norm_cfg = dict(
