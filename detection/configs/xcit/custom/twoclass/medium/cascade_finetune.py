@@ -6,10 +6,10 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 """
 
 _base_ = [
-    '../_base_/models/custom_cascade_twoclass.py',
-    '../_base_/datasets/custom_detection_twoclass_finetune.py',
-    '../_base_/schedules/schedule_1x.py', 
-    '../_base_/default_runtime.py'
+    '/srv/ocr/github_repos/xcit/detection/configs/_base_/models/custom_cascade_twoclass.py',
+    '/srv/ocr/github_repos/xcit/detection/configs/_base_/datasets/custom_detection_twoclass_finetune.py',
+    '/srv/ocr/github_repos/xcit/detection/configs/_base_/schedules/schedule_1x.py', 
+    '/srv/ocr/github_repos/xcit/detection/configs/_base_/default_runtime.py'
 ]
 
 model = dict(
