@@ -7,7 +7,7 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 
 _base_ = [
     '/srv/ocr/github_repos/xcit/detection/configs/_base_/models/custom_model.py',
-    '/srv/ocr/github_repos/xcit/detection/configs/_base_/datasets/prseg_detection_finetune.py',
+    '/srv/ocr/github_repos/xcit/detection/configs/_base_/datasets/jp/prseg_detection_finetune.py',
     '/srv/ocr/github_repos/xcit/detection/configs/_base_/schedules/schedule_1x.py',
     '/srv/ocr/github_repos/xcit/detection/configs/_base_/default_runtime.py'
 ]
