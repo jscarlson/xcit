@@ -1,8 +1,8 @@
 # Copyright (c) 2015-present, Facebook, Inc.
 # All rights reserved.
-_base_ = './coco_instance.py'
+_base_ = '../coco_instance.py'
 dataset_type = 'CocoDataset'
-data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/ocr_datasets/teikoku/seg/'
+data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/ocr_datasets/newspaper/'
 classes = ('char',)
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -20,7 +20,7 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(1333, 800),
+        img_scale=(1333, 128),
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
@@ -37,19 +37,19 @@ data = dict(
     train=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'train70.json',
-        img_prefix=data_root + 'seg_unlabeled/',
+        ann_file=data_root + 'noisy_train70sofar_highres_expanded.json',
+        img_prefix=data_root + 'noisy_lines/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'test30.json',
-        img_prefix=data_root + 'seg_unlabeled/',
+        ann_file=data_root + 'noisy_test30sofar_highres_expanded.json',
+        img_prefix=data_root + 'noisy_lines/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'test30.json',
-        img_prefix=data_root + 'seg_unlabeled/',
+        ann_file=data_root + 'noisy_test30sofar_highres_expanded.json',
+        img_prefix=data_root + 'noisy_lines/',
         pipeline=test_pipeline))
-evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP', classwise=True)
+evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP',)

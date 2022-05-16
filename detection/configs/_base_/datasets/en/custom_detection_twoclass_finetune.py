@@ -1,9 +1,9 @@
 # Copyright (c) 2015-present, Facebook, Inc.
 # All rights reserved.
-_base_ = './coco_instance.py'
+_base_ = '../coco_instance.py'
 dataset_type = 'CocoDataset'
 data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/ocr_datasets/newspaper/'
-classes = ('char',)
+classes = ('char', 'word')
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -20,7 +20,7 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(1333, 128),
+        img_scale=(1333, 800),
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
@@ -37,19 +37,19 @@ data = dict(
     train=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_train70sofar_highres_expanded.json',
-        img_prefix=data_root + 'noisy_lines/',
+        ann_file=data_root + 'noisy_train70sofar_highres_expanded_comma_corrected.json',
+        img_prefix=data_root + 'noisy_lines2/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_test30sofar_highres_expanded.json',
-        img_prefix=data_root + 'noisy_lines/',
+        ann_file=data_root + 'noisy_test30sofar_highres_expanded_comma_corrected.json',
+        img_prefix=data_root + 'noisy_lines2/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_test30sofar_highres_expanded.json',
-        img_prefix=data_root + 'noisy_lines/',
+        ann_file=data_root + 'noisy_test30sofar_highres_expanded_comma_corrected.json',
+        img_prefix=data_root + 'noisy_lines2/',
         pipeline=test_pipeline))
-evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP',)
+evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP', classwise=True)
