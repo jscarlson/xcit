@@ -7,7 +7,7 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 
 _base_ = [
     '/srv/ocr/github_repos/xcit/detection/configs/_base_/models/custom_model_twoclass.py',
-    '/srv/ocr/github_repos/xcit/detection/configs/_base_/datasets/custom_detection_twoclass.py',
+    '/srv/ocr/github_repos/xcit/detection/configs/_base_/datasets/en/custom_detection_twoclass.py',
     '/srv/ocr/github_repos/xcit/detection/configs/_base_/schedules/schedule_1x.py',
     '/srv/ocr/github_repos/xcit/detection/configs/_base_/default_runtime.py'
 ]
