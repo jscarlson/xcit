@@ -43,13 +43,13 @@ data = dict(
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_test30sofar_highres_expanded_comma_corrected.json',
+        ann_file=data_root + 'noisy_val15sofar_highres_expanded_comma_corrected.json',
         img_prefix=data_root + 'noisy_lines2/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_test30sofar_highres_expanded_comma_corrected.json',
+        ann_file=data_root + 'noisy_test15sofar_highres_expanded_comma_corrected.json',
         img_prefix=data_root + 'noisy_lines2/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP', classwise=True)
