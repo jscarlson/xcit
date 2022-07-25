@@ -99,7 +99,7 @@ log_config = dict(
         dict(
             type='WandbLoggerHook',
             init_kwargs=dict(
-                project='mmdetection',
+                project='effocr_loc_v1',
                 name='xcit-s-eng-pretrain'))
     ])
 
