@@ -6,10 +6,10 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 """
 
 _base_ = [
-    '/srv/ocr/github_repos/xcit/detection/configs/_base_/models/custom_model_twoclass.py',
-    '/srv/ocr/github_repos/xcit/detection/configs/_base_/datasets/en/custom_detection_twoclass_finetune.py',
-    '/srv/ocr/github_repos/xcit/detection/configs/_base_/schedules/schedule_1x.py',
-    '/srv/ocr/github_repos/xcit/detection/configs/_base_/default_runtime.py'
+    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/models/custom_model_twoclass.py',
+    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/datasets/en/custom_detection_twoclass_finetune.py',
+    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/schedules/schedule_1x.py',
+    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/default_runtime.py'
 ]
 
 model = dict(
@@ -99,7 +99,7 @@ log_config = dict(
         dict(
             type='WandbLoggerHook',
             init_kwargs=dict(
-                project='mmdetection',
+                project='effocr_loc_v1',
                 name='xcit-s-eng-pretrain'))
     ])
 
