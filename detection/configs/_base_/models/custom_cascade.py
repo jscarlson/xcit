@@ -4,6 +4,7 @@ model = dict(
     backbone=dict(
         type='XCiT',
         patch_size=8,
+        num_classes=1,
         embed_dim=384,
         depth=12,
         num_heads=8,
