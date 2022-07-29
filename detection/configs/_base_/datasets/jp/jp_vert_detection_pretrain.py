@@ -2,7 +2,7 @@
 # All rights reserved.
 _base_ = '../coco_instance.py'
 dataset_type = 'CocoDataset'
-data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/synth_textlines_jp_vertical/'
+data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/synthtxt_jp_vertical/'
 classes = ('character',)
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -43,13 +43,13 @@ data = dict(
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'test20.json',
+        ann_file=data_root + 'val10.json',
         img_prefix=data_root + 'images/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'test20.json',
+        ann_file=data_root + 'test10.json',
         img_prefix=data_root + 'images/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP', classwise=True)
