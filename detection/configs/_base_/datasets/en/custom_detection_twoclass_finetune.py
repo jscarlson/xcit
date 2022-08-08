@@ -2,7 +2,7 @@
 # All rights reserved.
 _base_ = '../coco_instance.py'
 dataset_type = 'CocoDataset'
-data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/ocr_datasets/newspaper/'
+data_root = '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/ocr_datasets/locca/'
 classes = ('char', 'word')
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -37,19 +37,19 @@ data = dict(
     train=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_train70sofar_highres_expanded_comma_corrected.json',
-        img_prefix=data_root + 'noisy_lines2/',
+        ann_file=data_root + 'train70.json',
+        img_prefix=data_root + 'images/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_val15sofar_highres_expanded_comma_corrected.json',
-        img_prefix=data_root + 'noisy_lines2/',
+        ann_file=data_root + 'val15.json',
+        img_prefix=data_root + 'images/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'noisy_test15sofar_highres_expanded_comma_corrected.json',
-        img_prefix=data_root + 'noisy_lines2/',
+        ann_file=data_root + 'test15.json',
+        img_prefix=data_root + 'images/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP', classwise=True)
