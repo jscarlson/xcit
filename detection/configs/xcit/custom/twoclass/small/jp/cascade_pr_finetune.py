@@ -22,6 +22,7 @@ model = dict(
         mlp_ratio=4,
         qkv_bias=True,
         eta=1e-5,
+        num_classes=1,
         drop_path_rate=0.1,
         out_indices=[7, 11, 15, 23],
     ),
