@@ -24,6 +24,7 @@ model = dict(
         eta=1e-5,
         drop_path_rate=0.1,
         out_indices=[7, 11, 15, 23],
+        num_classes=2
     ),
     neck=dict(in_channels=[384, 384, 384, 384]),
 )
