@@ -6,7 +6,7 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 """
 
 _base_ = [
-    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/models/custom_cascade.py',
+    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/models/cascade_mask_rcnn_xcit_p8.py',
     '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/datasets/jp/jp_hori_detection_pretrain.py',
     '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/schedules/schedule_1x.py', 
     '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/default_runtime.py'
