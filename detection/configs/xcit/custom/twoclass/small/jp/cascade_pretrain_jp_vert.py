@@ -17,16 +17,14 @@ model = dict(
         type='XCiT',
         patch_size=8,
         embed_dim=384,
-        depth=24,
+        depth=12,
         num_heads=8,
         mlp_ratio=4,
         qkv_bias=True,
-        eta=1e-5,
-        drop_path_rate=0.1,
-        out_indices=[7, 11, 15, 23],
-        num_classes=1,
+        eta=1.0,
+        drop_path_rate=0.05,
+        out_indices=[3, 5, 7, 11]
     ),
-    neck=dict(in_channels=[384, 384, 384, 384]),
 )
 
 img_norm_cfg = dict(

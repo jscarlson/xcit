@@ -7,7 +7,7 @@ https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 
 _base_ = [
     '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/models/cascade_mask_rcnn_xcit_p8.py',
-    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/datasets/en/custom_detection_twoclass.py',
+    '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/datasets/en/locca_detection_finetune.py',
     '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/schedules/schedule_1x.py', 
     '/mnt/122a7683-fa4b-45dd-9f13-b18cc4f4a187/github_repos/xcit/detection/configs/_base_/default_runtime.py'
 ]
@@ -17,16 +17,14 @@ model = dict(
         type='XCiT',
         patch_size=8,
         embed_dim=384,
-        depth=24,
+        depth=12,
         num_heads=8,
         mlp_ratio=4,
         qkv_bias=True,
-        eta=1e-5,
-        drop_path_rate=0.1,
-        out_indices=[7, 11, 15, 23],
-        num_classes=2
+        eta=1.0,
+        drop_path_rate=0.05,
+        out_indices=[3, 5, 7, 11]
     ),
-    neck=dict(in_channels=[384, 384, 384, 384]),
 )
 
 img_norm_cfg = dict(
