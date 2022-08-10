@@ -23,7 +23,8 @@ model = dict(
         qkv_bias=True,
         eta=1.0,
         drop_path_rate=0.05,
-        out_indices=[3, 5, 7, 11]
+        out_indices=[3, 5, 7, 11],
+        num_classes=1,
     ),
 )
 
