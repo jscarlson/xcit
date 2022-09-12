@@ -86,7 +86,7 @@ log_config = dict(
         dict(
             type='WandbLoggerHook',
             init_kwargs=dict(
-                project='effocr_loc_v1',
+                project='effocr_loc_v2',
                 name='xcit-m-eng-pretrain'))
     ])
 
