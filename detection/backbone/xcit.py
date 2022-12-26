@@ -131,7 +131,7 @@ class LPI(nn.Module):
         self.conv1 = torch.nn.Conv2d(in_features, out_features, kernel_size=kernel_size,
                                      padding=padding, groups=out_features)
         self.act = act_layer()
-        self.bn = nn.SyncBatchNorm(in_features)
+        self.bn = nn.BatchNorm(in_features) # nn.SyncBatchNorm(in_features)
         self.conv2 = torch.nn.Conv2d(in_features, out_features, kernel_size=kernel_size,
                                      padding=padding, groups=out_features)
 
